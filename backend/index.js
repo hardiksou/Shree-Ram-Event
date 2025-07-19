@@ -9,18 +9,13 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-<<<<<<< HEAD
 // app.use(express.static('frontend'));
 
 // Static client files
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-=======
-
-// Static client files
 // Serve frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
->>>>>>> b00f3d7af60e3355d8bee7afee2116e35970fe21
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
 });
