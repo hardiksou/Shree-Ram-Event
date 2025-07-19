@@ -11,13 +11,14 @@ app.use(cors());
 app.use(express.json());
 // app.use(express.static('frontend'));
 
-// Static client files
-app.use(express.static(path.join(__dirname, '../frontend')));
-
 // Serve frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
+});
+
+app.get('/test', (req, res) => {
+  res.json({ message: 'Test endpoint is working!' });
 });
 
 app.post('/send', async (req, res) => {
