@@ -11,12 +11,11 @@ app.use(cors());
 app.use(express.json());
 
 // Static client files
+// Serve frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
-
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
 });
-
 
 app.post('/send', async (req, res) => {
   const { name, email, message } = req.body;
