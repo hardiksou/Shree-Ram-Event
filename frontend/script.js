@@ -211,7 +211,7 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
   const formMessage = document.getElementById('formMessage');
 
   try {
-  const response = await fetch('https://shree-ram-event.onrender.com/send', {
+  const response = await fetch('http://localhost:3000/send', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, email, message })
@@ -229,3 +229,5 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
   formMessage.textContent = 'An error occurred. Please try again.';
 }
 });
+
+//https://shree-ram-event.onrender.com/send
